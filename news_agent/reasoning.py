@@ -13,7 +13,7 @@ class NewsReasoning:
         if api_key:
             # Use Google AI Studio
             self.client = genai.Client(api_key=api_key)
-            self.model_name = os.environ.get("GOOGLE_MODEL_NAME", "gemini-2.0-flash-exp") # Default to a known working model for AI Studio
+            self.model_name = os.environ.get("GOOGLE_MODEL_NAME", "gemini-2.5-pro") # Default to Gemini 2.5 Pro
             logging.info(f"Google Gen AI SDK inicializado con AI Studio. Modelo: {self.model_name}")
         else:
             # Use Vertex AI
