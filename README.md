@@ -94,4 +94,4 @@ gcloud scheduler jobs create http news-agent-scheduler \
 
 ## Development
 
-This project was developed using **Vibe Coding** with Jetski/Antigravity, demonstrating rapid prototyping and deployment of complex AI agents on GCP.
+This project was developed using **Vibe Coding** with [Antigravity](https://antigravity.google/), demonstrating rapid prototyping and deployment of complex AI agents on GCP.
