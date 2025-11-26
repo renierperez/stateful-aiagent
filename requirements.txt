@@ -1,0 +1,7 @@
+requests
+beautifulsoup4
+duckduckgo-search
+google-cloud-firestore>=2.16.0
+google-genai
+python-dotenv
+pytz
