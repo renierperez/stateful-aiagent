@@ -2,7 +2,7 @@
 
 This project implements a stateful autonomous agent that automates the process of finding, summarizing, and delivering news. It uses a **Brain-Memory-Action** architecture on Google Cloud Platform.
 
-![High-Level Architecture](images/architecture.png)
+![High-Level Architecture](images/architecture_adk.png)
 
 ## Architecture
 
