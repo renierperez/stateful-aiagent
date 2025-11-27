@@ -9,6 +9,7 @@ This project implements a stateful autonomous agent that automates the process o
 -   **Brain:** Vertex AI (Gemini 2.5 Pro) with Google Search Grounding for reasoning and content generation.
 -   **Memory:** Cloud Firestore with Vector Search for semantic deduplication and persistence.
 -   **Action:** Cloud Run Jobs for serverless, scheduled execution.
+-   **ADK Refactoring:** The agent has been refactored using the Google Agent Development Kit (ADK) for better modularity and tool-calling capabilities.
 -   **Security:** Secret Manager for secure credential management.
 
 ## Deployment Guide for GCP Architects
@@ -90,6 +91,38 @@ gcloud scheduler jobs create http news-agent-scheduler \
 --schedule="0 8 * * *" \
 --time-zone="America/Santiago" \
 --uri="https://${REGION}-run.googleapis.com/v1/projects/${PROJECT_ID}/locations/${REGION}/jobs/news-agent-job:run" \
+--http-method=POST \
+--oauth-service-account-email=${SERVICE_ACCOUNT}
+```
+
+## ADK Agent Deployment (New)
+
+The project now includes an improved version of the agent using the Google Agent Development Kit (ADK).
+
+### 1. Build and Deploy ADK Agent
+
+Use the provided script to build and deploy the ADK agent. This script handles the Docker build, push, and Cloud Run Job creation/update.
+
+```bash
+# Make the script executable
+chmod +x deploy_adk.sh
+
+# Run the deployment script
+./deploy_adk.sh
+```
+
+The script will automatically set up the necessary environment variables and secrets for the ADK agent.
+
+### 2. Schedule ADK Agent
+
+Create a Cloud Scheduler job for the ADK agent:
+
+```bash
+gcloud scheduler jobs create http cuba-news-adk-scheduler \
+--location=us-central1 \
+--schedule="0 8 * * *" \
+--time-zone="America/Santiago" \
+--uri="https://us-central1-run.googleapis.com/apis/run.googleapis.com/v1/namespaces/YOUR_PROJECT_ID/jobs/cuba-news-adk-job:run" \
 --http-method=POST \
 --oauth-service-account-email=${SERVICE_ACCOUNT}
 ```
