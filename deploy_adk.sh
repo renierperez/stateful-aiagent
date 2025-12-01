@@ -25,13 +25,13 @@ if gcloud run jobs describe $JOB_NAME --region $REGION > /dev/null 2>&1; then
     gcloud run jobs update $JOB_NAME \
         --image $IMAGE_NAME \
         --region $REGION \
-        --set-env-vars="NON_INTERACTIVE=true,BCC_EMAILS=marisleydiss@gmail.com;rodolfo.socas.alvez@gmail.com,GMAIL_USER=renier.perez@gmail.com" \
+        --set-env-vars="NON_INTERACTIVE=true,BCC_EMAILS=dania.g.y.56@gmail.com,GMAIL_USER=renier.perez@gmail.com" \
         --set-secrets="GOOGLE_API_KEY=GOOGLE_API_KEY:latest,GMAIL_PASSWORD=GMAIL_PASSWORD:latest"
 else
     gcloud run jobs create $JOB_NAME \
         --image $IMAGE_NAME \
         --region $REGION \
-        --set-env-vars="NON_INTERACTIVE=true,BCC_EMAILS=renier.perez.m@gmail.com,GMAIL_USER=renier.perez@gmail.com" \
+        --set-env-vars="NON_INTERACTIVE=true,BCC_EMAILS=dania.g.y.56@gmail.com,GMAIL_USER=renier.perez@gmail.com" \
         --set-secrets="GOOGLE_API_KEY=GOOGLE_API_KEY:latest,GMAIL_PASSWORD=GMAIL_PASSWORD:latest"
 fi
 

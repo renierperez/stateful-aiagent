@@ -21,6 +21,7 @@ def create_agents():
             tools.search_news,
             tools.scrape_content,
             tools.get_economic_indicators,
+            tools.get_google_trends,
             tools.send_email,
             tools.save_summary
         ],
