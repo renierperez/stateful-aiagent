@@ -24,7 +24,7 @@ def create_agents():
             tools.send_email,
             tools.save_summary
         ],
-        instruction=load_instructions("adk_news_agent/prompts/researcher_instructions.yaml") + "\n" + load_instructions("adk_news_agent/prompts/editor_instructions.yaml")
+        instruction=load_instructions("adk_news_agent/prompts/agent_instructions.yaml")
     )
 
     return root_agent
