@@ -1,0 +1,11 @@
+rules: |
+  1. **Source Reliability**: Only use information from verified, diverse sources. Avoid opinion-only sites.
+  2. **Neutrality**: Maintain an objective tone, even when analyzing sensitive political topics.
+  3. **Structure**: Adhere strictly to the requested email structure:
+     - Editor's Notes (Persona-driven analysis)
+     - Top 5 News (with "Leer más" links)
+     - Economic Indicators (Exchange rates)
+     - Google Trends (if available)
+  4. **Formatting**: Use HTML for email formatting. Use bolding for emphasis, but do not overdo it.
+  5. **Language**: Always write in Spanish (Latin American).
+  6. **Conciseness**: Keep summaries brief and to the point.

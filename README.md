@@ -127,6 +127,13 @@ gcloud scheduler jobs create http cuba-news-adk-scheduler \
 --oauth-service-account-email=${SERVICE_ACCOUNT}
 ```
 
+## Features
+
+-   **Google Trends Integration**: Uses `pytrends` with a fallback to BigQuery for stable, real-time trending topics.
+-   **Context Engineering**: Optimized prompts using ADK best practices for consistent persona and tone.
+-   **Dynamic Email Layout**: Professional journalist persona with Editor's Notes, Top 5 News (with links), and Economic Indicators.
+-   **Automated Deployment**: Includes a script for easy deployment and updates on GCP.
+
 ## Development
 
 This project was developed using **Vibe Coding** with [Antigravity](https://antigravity.google/), demonstrating rapid prototyping and deployment of complex AI agents on GCP.

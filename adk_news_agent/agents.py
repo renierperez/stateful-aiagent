@@ -12,6 +12,20 @@ def create_agents():
     # Model configuration
     model_name = os.environ.get("MODEL_NAME", "gemini-2.5-pro")
 
+    # Load prompts
+    instructions_path = os.path.join(os.path.dirname(__file__), 'prompts', 'agent_instructions.yaml')
+    persona_path = os.path.join(os.path.dirname(__file__), 'prompts', 'persona.yaml')
+    rules_path = os.path.join(os.path.dirname(__file__), 'prompts', 'rules.yaml')
+    
+    with open(instructions_path, 'r') as f:
+        instructions_data = yaml.safe_load(f)
+    with open(persona_path, 'r') as f:
+        persona_data = yaml.safe_load(f)
+    with open(rules_path, 'r') as f:
+        rules_data = yaml.safe_load(f)
+        
+    combined_instructions = f"{persona_data['persona']}\n\n{rules_data['rules']}\n\n{instructions_data['instructions']}"
+
     # Combined Agent
     root_agent = LlmAgent(
         name="CubaNewsAgent",
