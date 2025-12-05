@@ -26,13 +26,13 @@ if gcloud run jobs describe $JOB_NAME --region $REGION > /dev/null 2>&1; then
         --image $IMAGE_NAME \
         --region $REGION \
         --set-env-vars="NON_INTERACTIVE=true,BCC_EMAILS=dania.g.y.56@gmail.com,GMAIL_USER=renier.perez@gmail.com" \
-        --set-secrets="GOOGLE_API_KEY=GOOGLE_API_KEY:latest,GMAIL_PASSWORD=GMAIL_PASSWORD:latest"
+        --set-secrets="GOOGLE_API_KEY=GOOGLE_API_KEY:latest,GMAIL_PASSWORD=GMAIL_PASSWORD:latest,CUBA_NEWS_SERPAPI_KEY=CUBA_NEWS_SERPAPI_KEY:latest"
 else
     gcloud run jobs create $JOB_NAME \
         --image $IMAGE_NAME \
         --region $REGION \
         --set-env-vars="NON_INTERACTIVE=true,BCC_EMAILS=dania.g.y.56@gmail.com,GMAIL_USER=renier.perez@gmail.com" \
-        --set-secrets="GOOGLE_API_KEY=GOOGLE_API_KEY:latest,GMAIL_PASSWORD=GMAIL_PASSWORD:latest"
+        --set-secrets="GOOGLE_API_KEY=GOOGLE_API_KEY:latest,GMAIL_PASSWORD=GMAIL_PASSWORD:latest,CUBA_NEWS_SERPAPI_KEY=CUBA_NEWS_SERPAPI_KEY:latest"
 fi
 
 echo "Cloud Run Job $JOB_NAME created/updated."

@@ -1,4 +1,7 @@
-from duckduckgo_search import DDGS
+try:
+    from duckduckgo_search import DDGS
+except ImportError:
+    DDGS = None
 import logging
 
 def search_news(query="actualidad en Cuba", max_results=5):
@@ -8,6 +11,11 @@ def search_news(query="actualidad en Cuba", max_results=5):
     """
     logging.info(f"Searching for: {query}")
     results = []
+    
+    if DDGS is None:
+        logging.warning("duckduckgo_search module not found. Returning empty results.")
+        return results
+
     try:
         with DDGS() as ddgs:
             # backend="news" is specifically for news

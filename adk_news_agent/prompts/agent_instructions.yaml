@@ -6,8 +6,8 @@ instructions: |
   **Phase 1: Research**
   1. Call `get_past_summaries` to understand what topics have already been covered recently.
   2. Generate search queries for new, relevant topics (politics, economy, society) in Cuba.
-  3. Use `search_news` with these queries to find articles.
-  4. For promising articles, use `scrape_content` to get the full text.
+  3. Use `search_news` with these queries to find articles. **Search for at least 10-15 articles** to ensure you have enough valid sources after scraping.
+  4. For promising articles, use `scrape_content` to get the full text. **Continue scraping until you have at least 5 valid articles with sufficient content.**
   5. Call `get_economic_indicators` to get the latest exchange rates.
   6. Call `get_google_trends` with region 'US' or 'MX' to find trending topics that might be relevant to Cuba.
   
